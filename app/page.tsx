@@ -12,8 +12,6 @@ export const metadata: Metadata = { title: 'Frank Valere Yussa - Corporate Lawye
 
 const HERO_SLIDES = [
   { src: '/images/banner-navy.jpg', alt: 'Frank Valère Yussa' },
-  { src: '/images/cameroon-day.jpg', alt: 'Frank Valère Yussa at Cameroon National Day' },
-  { src: '/images/speaking-mic.jpg', alt: 'Frank Valère Yussa speaking at a conference' },
   { src: '/images/banner-burgundy.jpg', alt: 'Frank Valère Yussa' },
 ]
 
@@ -110,6 +108,38 @@ export default function Home() {
             <p style={{ color: '#6b7a8a', fontSize: '0.9rem', marginBottom: '2rem', fontStyle: 'italic' }}>Where Legal Precision Meets Financial Strategy</p>
             <AboutTabs tabs={ABOUT_TABS} />
           </SectionReveal>
+        </div>
+      </section>
+
+      {/* PUBLIC VOICE / MEDIA */}
+      <section style={{ padding: '6rem 5%', background: '#0d1b3e' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+          <SectionReveal style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <span style={{ color: 'var(--accent)', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', transition: 'color 0.3s' }}>A Recognized Voice</span>
+            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', color: 'white', marginTop: '0.75rem', maxWidth: 700, marginLeft: 'auto', marginRight: 'auto' }}>
+              Trusted to speak on the record — from international forums to national broadcast
+            </h2>
+          </SectionReveal>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
+            <SectionReveal className="hover-lift img-zoom" style={{ borderRadius: 12, overflow: 'hidden', position: 'relative' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/speaking-mic.jpg" alt="Frank Valère Yussa addressing a business forum" style={{ width: '100%', height: 420, objectFit: 'cover', objectPosition: 'top' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(4,7,15,0.92) 0%, rgba(4,7,15,0.1) 55%)' }} />
+              <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '1.75rem' }}>
+                <p style={{ color: 'var(--accent)', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.5rem', transition: 'color 0.3s' }}>Keynote &amp; Panel Speaking</p>
+                <p style={{ color: 'white', fontSize: '0.95rem', lineHeight: 1.6 }}>Addressing investors and policymakers on market access strategy at international business forums — translating complex cross-border frameworks into decisions boardrooms can act on.</p>
+              </div>
+            </SectionReveal>
+            <SectionReveal delay={0.08} className="hover-lift img-zoom" style={{ borderRadius: 12, overflow: 'hidden', position: 'relative' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/press-interview.jpg" alt="Frank Valère Yussa being interviewed by press" style={{ width: '100%', height: 420, objectFit: 'cover', objectPosition: 'top' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(4,7,15,0.92) 0%, rgba(4,7,15,0.1) 55%)' }} />
+              <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '1.75rem' }}>
+                <p style={{ color: 'var(--accent)', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.5rem', transition: 'color 0.3s' }}>Broadcast &amp; Press</p>
+                <p style={{ color: 'white', fontSize: '0.95rem', lineHeight: 1.6 }}>Interviewed on national television on the state of foreign investment and legal reform — the same clarity and candor clients get in a closed-door negotiation.</p>
+              </div>
+            </SectionReveal>
+          </div>
         </div>
       </section>
 
@@ -215,6 +245,31 @@ export default function Home() {
             </SectionReveal>
           </div>
         ))}
+      </section>
+
+      {/* WHY CHOOSE FRANK */}
+      <section style={{ padding: '6rem 5%', background: '#f8f8f6' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <SectionReveal style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <span style={{ color: 'var(--accent)', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', transition: 'color 0.3s' }}>The Difference</span>
+            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', color: '#0d1b3e', marginTop: '0.75rem' }}>Why Corporations Choose Frank</h2>
+          </SectionReveal>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem' }}>
+            {[
+              { icon: Landmark, title: 'Direct Partner-Level Access', desc: 'No junior associates in between. Every engagement, from first call to final signature, is handled personally at partner level.' },
+              { icon: Scale, title: 'Law Fluent in Finance', desc: 'A rare dual mandate: legal structuring and financial modeling under one roof, so deals are built to actually close — not just to survive review.' },
+              { icon: Globe2, title: 'Proven Across Borders', desc: 'A decade of transactions spanning LATAM, Africa, and Europe means fewer surprises when your deal crosses a jurisdiction most counsel has never touched.' },
+            ].map((item, i) => (
+              <SectionReveal key={i} delay={i * 0.08} className="hover-lift" style={{ background: 'white', padding: '2.25rem 1.75rem', borderRadius: 12, border: '1px solid #e8e8e8', textAlign: 'center' }}>
+                <div style={{ width: 52, height: 52, borderRadius: '50%', background: 'var(--accent-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.25rem', transition: 'background 0.3s' }}>
+                  <item.icon size={22} color="var(--accent)" style={{ transition: 'color 0.3s' }} />
+                </div>
+                <h3 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: '1rem', color: '#0d1b3e', marginBottom: '0.75rem' }}>{item.title}</h3>
+                <p style={{ color: '#6b7a8a', fontSize: '0.85rem', lineHeight: 1.7 }}>{item.desc}</p>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* SOFT SKILLS / CLOSING BAND */}
