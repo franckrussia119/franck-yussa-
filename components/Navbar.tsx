@@ -58,7 +58,7 @@ export default function Navbar() {
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 5%', width: '100%', display: 'flex', alignItems: 'center', gap: '2rem' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexShrink: 0 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://frankyussa.com/wp-content/uploads/2025/11/unnamed__14_-removebg-preview-e1763479295956.png" alt="Frank Yussa" style={{ height: 48, width: 'auto' }} />
+            <img src="/images/logo.png" alt="Frank Valère Yussa" style={{ height: 44, width: 'auto' }} />
           </Link>
 
           <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', flex: 1 }}>

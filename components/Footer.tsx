@@ -21,7 +21,7 @@ export default function Footer() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', marginBottom: '2rem' }}>
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://frankyussa.com/wp-content/uploads/2025/11/unnamed__14_-removebg-preview-e1763479295956.png" alt="Frank Yussa" style={{ height: 56, marginBottom: '1rem' }} />
+            <img src="/images/logo.png" alt="Frank Valère Yussa" style={{ height: 52, marginBottom: '1rem' }} />
             <p style={{ fontSize: '0.85rem', lineHeight: 1.7 }}>Economist and Lawyer. Investment Banker, Lawyer, Aircraft Specialist.</p>
             <div style={{ display: 'flex', gap: '0.9rem', marginTop: '1.25rem' }}>
               {[Facebook, Twitter, Instagram, Youtube].map((Icon, i) => (

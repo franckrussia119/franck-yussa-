@@ -14,7 +14,7 @@ const TIMELINE = [
 export default function Experience() {
   return (
     <>
-      <PageHeader title="Experience" subtitle="A decade at the intersection of law, finance, and diplomacy" image="/images/frank-hero-moscow.jpg" />
+      <PageHeader title="Experience" subtitle="A decade at the intersection of law, finance, and diplomacy" image="/images/rudn-university.jpg" />
       <section style={{ padding: '5rem 5%', background: 'white' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           {TIMELINE.map((item, i) => (

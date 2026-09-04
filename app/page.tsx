@@ -11,17 +11,18 @@ import StatCounter from '@/components/StatCounter'
 export const metadata: Metadata = { title: 'Frank Valere Yussa - Corporate Lawyer & Investment Banker' }
 
 const HERO_SLIDES = [
-  { src: '/images/frank-hero-moscow.jpg', alt: 'Frank Valere Yussa in Moscow' },
-  { src: '/images/frank-office-blue-suit.jpg', alt: 'Frank Valere Yussa in his office' },
-  { src: '/images/frank-handshake-bench.jpg', alt: 'Frank Valere Yussa with a colleague' },
+  { src: '/images/banner-navy.jpg', alt: 'Frank Valère Yussa' },
+  { src: '/images/cameroon-day.jpg', alt: 'Frank Valère Yussa at Cameroon National Day' },
+  { src: '/images/speaking-mic.jpg', alt: 'Frank Valère Yussa speaking at a conference' },
+  { src: '/images/banner-burgundy.jpg', alt: 'Frank Valère Yussa' },
 ]
 
 const practiceAreas = [
-  { img: 'https://frankyussa.com/wp-content/uploads/2025/11/unnamed-20.jpg', title: 'Cross-Border Mergers & Acquisitions', desc: 'Structuring and executing M&A transactions across multiple jurisdictions, with particular expertise in LATAM-Europe-Africa corridors. From due diligence to deal closure, ensuring regulatory compliance and optimal deal structure.' },
-  { img: 'https://frankyussa.com/wp-content/uploads/2025/11/unnamed-21.jpg', title: 'Corporate Finance & Banking Law', desc: 'Advising on corporate financing structures, banking regulations, IPOs, and leveraged buyouts. Bridging the gap between legal requirements and financial objectives.' },
-  { img: 'https://frankyussa.com/wp-content/uploads/2025/11/unnamed-22.jpg', title: 'International Contract Negotiation', desc: 'Leading high-stakes negotiations for international partnerships, joint ventures, and commercial agreements. Expertise in multi-party, multi-jurisdictional deal structuring.' },
-  { img: 'https://frankyussa.com/wp-content/uploads/2016/09/unnamed-10.jpg', title: 'Regulatory Compliance & Due Diligence', desc: 'Comprehensive legal and financial due diligence for cross-border investments. Navigating complex regulatory landscapes across emerging and developed markets.' },
-  { img: 'https://frankyussa.com/wp-content/uploads/2025/11/unnamed-23.jpg', title: 'Embassy & Diplomatic Legal Advisory', desc: 'Specialized counsel for diplomatic missions, covering commercial law, bilateral agreements, and international trade matters.' },
+  { img: '/images/jurisdiction.jpg', title: 'Cross-Border Mergers & Acquisitions', desc: 'Structuring and executing M&A transactions across multiple jurisdictions, with particular expertise in LATAM-Europe-Africa corridors. From due diligence to deal closure, ensuring regulatory compliance and optimal deal structure.' },
+  { img: '/images/finance-meeting.jpg', title: 'Corporate Finance & Banking Law', desc: 'Advising on corporate financing structures, banking regulations, IPOs, and leveraged buyouts. Bridging the gap between legal requirements and financial objectives.' },
+  { img: '/images/brics-forum.jpg', title: 'International Contract Negotiation', desc: 'Leading high-stakes negotiations for international partnerships, joint ventures, and commercial agreements. Expertise in multi-party, multi-jurisdictional deal structuring.' },
+  { img: '/images/gavel.jpg', title: 'Regulatory Compliance & Due Diligence', desc: 'Comprehensive legal and financial due diligence for cross-border investments. Navigating complex regulatory landscapes across emerging and developed markets.' },
+  { img: '/images/cameroon-day.jpg', title: 'Embassy & Diplomatic Legal Advisory', desc: 'Specialized counsel for diplomatic missions, covering commercial law, bilateral agreements, and international trade matters.' },
 ]
 
 const ABOUT_TABS = [
@@ -91,7 +92,7 @@ export default function Home() {
         </div>
         <div className="img-zoom" style={{ overflow: 'hidden' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/frank-office-blue-suit.jpg" alt="Frank Yussa in his office" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <img src="/images/office-redfolder.jpg" alt="Frank Yussa reviewing documents" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         </div>
       </section>
 
@@ -101,7 +102,7 @@ export default function Home() {
           <SectionReveal style={{ position: 'relative' }}>
             <div style={{ position: 'absolute', top: '2rem', left: '-1rem', width: 80, height: '80%', background: 'var(--accent-soft)', borderRadius: '50%', zIndex: 0, transition: 'background 0.3s' }} />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://frankyussa.com/wp-content/uploads/2025/11/unnamed-30.jpg" alt="Frank in Traditional Attire" style={{ width: '85%', height: 550, objectFit: 'cover', position: 'relative', zIndex: 1, borderRadius: 8 }} />
+            <img src="/images/headshot-studio.jpg" alt="Frank Valère Yussa" style={{ width: '85%', height: 550, objectFit: 'cover', objectPosition: 'top', position: 'relative', zIndex: 1, borderRadius: 8 }} />
           </SectionReveal>
           <SectionReveal delay={0.1}>
             <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', fontWeight: 700, color: '#0d1b3e', marginBottom: '0.5rem' }}>About Frank</h2>
@@ -151,7 +152,7 @@ export default function Home() {
               <h2 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 800, fontSize: '1.6rem', color: '#0d1b3e', marginBottom: '0.5rem' }}>Education Excellence</h2>
               <div style={{ width: 50, height: 3, background: 'var(--accent)', marginBottom: '2rem', transition: 'background 0.3s' }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://frankyussa.com/wp-content/uploads/2025/11/content-2-e1763732924620.jpeg" alt="Frank Yussa Academic" style={{ width: '85%', height: 320, objectFit: 'cover', borderRadius: 8 }} />
+              <img src="/images/graduation-standing.jpg" alt="Frank Yussa Academic" style={{ width: '85%', height: 320, objectFit: 'cover', objectPosition: 'top', borderRadius: 8 }} />
             </SectionReveal>
             <SectionReveal delay={0.1} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {[
@@ -196,9 +197,9 @@ export default function Home() {
       {/* EXPERTISE 3 COLUMNS */}
       <section style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', minHeight: 500 }}>
         {[
-          { num: '01', title: 'Legal Expertise', img: 'https://frankyussa.com/wp-content/uploads/2025/11/content-2-e1763732924620.jpeg', items: ['Mergers & Acquisitions (M&A)', 'Corporate Finance Law', 'Banking & Financial Regulation', 'Due Diligence', 'Contract Negotiation', 'Private International Law'] },
-          { num: '02', title: 'Financial Acumen', img: '/images/frank-office-blue-suit.jpg', items: ['Investment Banking', 'Initial Public Offerings (IPO)', 'Leveraged Buyouts (LBO)', 'Financial Analysis', 'Corporate Valuation'] },
-          { num: '03', title: 'Languages', img: '/images/frank-handshake-bench.jpg', items: ['English (Native)', 'French (C1)', 'Russian (C2)', 'Spanish (C1)', 'Arabic (A2)'] },
+          { num: '01', title: 'Legal Expertise', img: '/images/gavel.jpg', items: ['Mergers & Acquisitions (M&A)', 'Corporate Finance Law', 'Banking & Financial Regulation', 'Due Diligence', 'Contract Negotiation', 'Private International Law'] },
+          { num: '02', title: 'Financial Acumen', img: '/images/finance-meeting.jpg', items: ['Investment Banking', 'Initial Public Offerings (IPO)', 'Leveraged Buyouts (LBO)', 'Financial Analysis', 'Corporate Valuation'] },
+          { num: '03', title: 'Languages', img: '/images/brics-forum.jpg', items: ['English (Native)', 'French (C1)', 'Russian (C2)', 'Spanish (C1)', 'Arabic (A2)'] },
         ].map((col, i) => (
           <div key={i} className="img-zoom" style={{ position: 'relative', overflow: 'hidden', minHeight: 500 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -220,7 +221,7 @@ export default function Home() {
       <section style={{ background: '#04070f', padding: '5rem 5%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
         <SectionReveal className="img-zoom" style={{ borderRadius: 8 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://frankyussa.com/wp-content/uploads/2025/11/unnamed-30.jpg" alt="Frank" style={{ width: '100%', height: 400, objectFit: 'cover', borderRadius: 8 }} />
+          <img src="/images/stairs-colleague.jpg" alt="Frank Valère Yussa" style={{ width: '100%', height: 400, objectFit: 'cover', objectPosition: 'top', borderRadius: 8 }} />
         </SectionReveal>
         <SectionReveal delay={0.1}>
           <h3 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: '1.1rem', color: 'rgba(255,255,255,0.7)', marginBottom: '1rem' }}>Soft Skills</h3>

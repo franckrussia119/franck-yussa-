@@ -15,7 +15,7 @@ const PUBLICATIONS = [
 export default function Research() {
   return (
     <>
-      <PageHeader title="Research & Publications" subtitle="Academic work at the intersection of law and economics" image="https://frankyussa.com/wp-content/uploads/2025/11/content-2-e1763732924620.jpeg" />
+      <PageHeader title="Research & Publications" subtitle="Academic work at the intersection of law and economics" image="/images/jurisdiction.jpg" />
       <section style={{ padding: '5rem 5%', background: 'white' }}>
         <div style={{ maxWidth: 1000, margin: '0 auto' }}>
           <SectionReveal>

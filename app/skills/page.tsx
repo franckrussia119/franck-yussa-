@@ -16,9 +16,9 @@ const CORE_SKILLS = [
 
 const GEO = [
   { img: 'https://frankyussa.com/wp-content/uploads/2025/11/unnamed-27.jpg', region: 'Latin America (LATAM)', items: ['Cross-border transaction structuring', 'Market entry strategies', 'Regulatory navigation', 'Partnership and joint venture agreements'] },
-  { img: 'https://frankyussa.com/wp-content/uploads/2025/11/unnamed-25.jpg', region: 'Africa', items: ['Emerging market investments', 'Infrastructure and development projects', 'Multi-jurisdictional compliance', 'International trade agreements'] },
+  { img: '/images/nairobi-street.jpg', region: 'Africa', items: ['Emerging market investments', 'Infrastructure and development projects', 'Multi-jurisdictional compliance', 'International trade agreements'] },
   { img: 'https://frankyussa.com/wp-content/uploads/2025/11/unnamed-26.jpg', region: 'Europe', items: ['EU regulatory compliance', 'Pan-European transactions', 'Eastern European market expertise', 'Russia-Europe business corridors'] },
-  { img: '/images/frank-hero-moscow.jpg', region: 'Industry Experience', items: ['Financial Services & Banking', 'Pharmaceutical & Healthcare', 'International Trade & Commerce', 'Diplomatic & Government Relations', 'Technology & Innovation', 'Real Estate & Infrastructure'] },
+  { img: '/images/cameroon-day.jpg', region: 'Industry Experience', items: ['Financial Services & Banking', 'Pharmaceutical & Healthcare', 'International Trade & Commerce', 'Diplomatic & Government Relations', 'Technology & Innovation', 'Real Estate & Infrastructure'] },
 ]
 
 function SolutionBlock({ tag, title, desc, points, img, reverse }: { tag: string; title: string; desc: string; points: string[]; img: string; reverse?: boolean }) {
@@ -50,7 +50,7 @@ function SolutionBlock({ tag, title, desc, points, img, reverse }: { tag: string
 export default function Skills() {
   return (
     <>
-      <PageHeader title="Core Competencies" subtitle="Skills Expertise" image="https://frankyussa.com/wp-content/uploads/2025/11/content-2-e1763732924620.jpeg" />
+      <PageHeader title="Core Competencies" subtitle="Skills Expertise" image="/images/rudn-university.jpg" />
 
       <section style={{ padding: '5rem 5%', background: '#0d1b3e' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
@@ -68,7 +68,7 @@ export default function Skills() {
         title="Investment Banking Initial Public Offerings (IPO)"
         desc="Advising companies through the IPO process, from pre-IPO structuring to regulatory compliance and listing requirements. Coordinating legal and financial aspects to ensure successful public market entry."
         points={['Pre-IPO Corporate Restructuring - Optimizing corporate structure, governance frameworks', 'Regulatory Compliance & Documentation - Preparing and reviewing prospectuses, registration', 'Underwriter Coordination & Deal Structuring - Negotiating underwriting agreements', 'Post-IPO Governance & Compliance - Establishing ongoing reporting obligations']}
-        img="https://frankyussa.com/wp-content/uploads/2016/09/unnamed-7-e1763474742486.jpg"
+        img="/images/gavel.jpg"
       />
 
       <SolutionBlock
@@ -76,7 +76,7 @@ export default function Skills() {
         title="Leveraged Buyouts (LBO)"
         desc="Structuring and executing leveraged buyout transactions, including financing arrangements, security structures, and regulatory compliance across multiple jurisdictions."
         points={['Transaction Structuring & Financing Architecture - Designing optimal capital structures combining senior debt', 'Security Documentation & Collateral Arrangements - Drafting and negotiating security agreements', 'Due Diligence & Risk Assessment - Conducting comprehensive legal and financial due diligence', 'Acquisition Agreement Negotiation - Structuring purchase agreements, representations and warranties']}
-        img="/images/frank-office-blue-suit.jpg"
+        img="/images/office-redfolder.jpg"
         reverse
       />
 

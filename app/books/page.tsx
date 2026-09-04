@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: 'Books - Frank Valere Yussa' }
 export default function Books() {
   return (
     <>
-      <PageHeader title="Books" subtitle="Forthcoming publications" image="/images/frank-office-blue-suit.jpg" />
+      <PageHeader title="Books" subtitle="Forthcoming publications" image="/images/graduation-seated.jpg" />
       <section style={{ padding: '6rem 5%', background: 'white' }}>
         <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
           <SectionReveal>

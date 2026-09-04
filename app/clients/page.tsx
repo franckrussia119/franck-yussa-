@@ -17,7 +17,7 @@ const CLIENT_TYPES = [
 export default function Clients() {
   return (
     <>
-      <PageHeader title="Clients" subtitle="Trusted by leaders across industries and continents" image="/images/frank-handshake-bench.jpg" />
+      <PageHeader title="Clients" subtitle="Trusted by leaders across industries and continents" image="/images/banner-burgundy.jpg" />
 
       <section style={{ padding: '5rem 5%', background: 'white' }}>
         <div style={{ maxWidth: 1000, margin: '0 auto', textAlign: 'center' }}>

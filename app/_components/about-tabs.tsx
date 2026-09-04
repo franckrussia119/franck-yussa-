@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Building2 } from 'lucide-react'
 
 export default function AboutTabs({ tabs }: { tabs: { label: string; body: string }[] }) {
   const [tab, setTab] = useState(0)
@@ -16,8 +17,9 @@ export default function AboutTabs({ tabs }: { tabs: { label: string; body: strin
       </div>
 
       <motion.div key={tab} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }} style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem', minHeight: 90 }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="https://frankyussa.com/wp-content/uploads/2025/11/titled_logo.webp" alt="The Noub's" style={{ height: 56, width: 'auto', objectFit: 'contain', flexShrink: 0 }} />
+        <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--accent-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'background 0.3s' }}>
+          <Building2 size={22} color="var(--accent)" style={{ transition: 'color 0.3s' }} />
+        </div>
         <p style={{ color: '#4a5568', fontSize: '0.9rem', lineHeight: 1.7 }}>{tabs[tab].body}</p>
       </motion.div>
     </>

@@ -23,7 +23,7 @@ export default function Contact() {
 
   return (
     <>
-      <PageHeader title="Contacts" subtitle="Let's discuss how I can help with your cross-border matter" image="/images/frank-hero-moscow.jpg" />
+      <PageHeader title="Contacts" subtitle="Let's discuss how I can help with your cross-border matter" image="/images/cameroon-day.jpg" />
 
       <section style={{ padding: '5rem 5%', background: 'white' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '5rem' }}>
