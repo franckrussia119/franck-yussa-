@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Hero from './_components/hero'
+import NdopPattern from '@/components/NdopPattern'
 import { LANGUAGES, REGIONS, TESTIMONIALS, DISSERTATION_URL } from '@/lib/site'
 
 const CREDENTIALS = [
@@ -42,7 +43,7 @@ export default function Home() {
       <Hero />
 
       {/* Credentials */}
-      <section className="section--tight" aria-label="Credentials">
+      <section className="section--tight bg-mist" aria-label="Credentials">
         <div className="container grid-4">
           {CREDENTIALS.map((c) => (
             <div key={c.value} style={{ borderTop: '2px solid var(--brass)', paddingTop: '1rem' }}>
@@ -53,28 +54,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Approach */}
-      <section className="section bg-mist">
-        <div className="container split split--5-7">
-          <div className="photo" style={{ aspectRatio: '4 / 5' }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/office-redfolder.jpg" alt="Dr. Frank-Valere Yussa reviewing documents" loading="lazy" />
+      {/* About */}
+      <section className="section">
+        <div className="container about-grid">
+          <div>
+            <p className="t-label">About Dr. Yussa</p>
+            <h2 className="t-h1" style={{ marginTop: '1rem', maxWidth: '16ch' }}>An economist&apos;s judgement with a corporate lawyer&apos;s rigour</h2>
+            <p className="t-lead" style={{ marginTop: '1.5rem', maxWidth: '44ch' }}>
+              Every legal decision moves money, markets and relationships. Dr. Frank-Valere Yussa structures deals with both in view, so they hold up in court and make sense on the balance sheet.
+            </p>
+            <p className="t-body" style={{ marginTop: '1.25rem', maxWidth: '52ch' }}>
+              A Cameroonian lawyer and economist based in Moscow, he founded The Noub&apos;s Law &amp; Advisory to advise companies, investors and embassies on transactions between Africa, Russia, Europe and Latin America, in nine languages.
+            </p>
+            <div className="btn-row" style={{ marginTop: '2.25rem' }}>
+              <Link href="/contact" className="btn btn--brass">Book a consultation</Link>
+              <Link href="/experience" className="btn btn--outline">Read his experience</Link>
+            </div>
           </div>
-          <div className="stack-lg">
-            <h2 className="t-h2">Legal counsel divorced from economic reality is incomplete.</h2>
-            <p className="t-body">
-              Business now sits where law, economics, technology and geopolitics meet. Getting a deal done means seeing how a legal decision moves through markets, supply chains and stakeholder relationships, and designing around it before it becomes a problem.
-            </p>
-            <p className="t-body">
-              As founder of The Noub&apos;s Law &amp; Advisory, Dr. Frank-Valere Yussa brings both disciplines to every mandate: the rigour of a corporate lawyer and the judgement of an economist who has spent over a decade on cross-border work.
-            </p>
-            <p><Link href="/experience" className="text-link">Read his experience</Link></p>
+          <div className="about-visual">
+            <div className="about-ndop" aria-hidden>
+              <NdopPattern width={150} height={900} seed={11} />
+            </div>
+            <div className="photo about-photo">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/frank-portrait-lounge.jpg" alt="Dr. Frank-Valere Yussa in a blue ndop-print suit" loading="lazy" style={{ objectPosition: 'center 22%' }} />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Practice areas */}
-      <section id="practice" className="section" style={{ scrollMarginTop: 'var(--nav-h)' }}>
+      <section id="practice" className="section bg-mist" style={{ scrollMarginTop: 'var(--nav-h)' }}>
         <div className="container">
           <div className="split" style={{ alignItems: 'end', marginBottom: '2.5rem' }}>
             <h2 className="t-h2">Practice areas</h2>

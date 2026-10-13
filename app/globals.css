@@ -221,3 +221,17 @@ textarea.form-input { min-height: 160px; resize: vertical; }
   .defence-grid .d-a { grid-row: auto; aspect-ratio: 4 / 5; }
   .defence-grid .d-b, .defence-grid .d-c { aspect-ratio: 3 / 2; }
 }
+
+/* Homepage about section: portrait with an ndop-cloth band */
+.about-grid { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.about-visual { position: relative; padding-left: 56px; }
+.about-ndop { position: absolute; left: 0; top: 7%; bottom: 7%; width: 132px; background: var(--indigo); border-radius: var(--radius); overflow: hidden; }
+.about-photo { position: relative; aspect-ratio: 4 / 5.2; max-height: 680px; }
+.btn--outline { border-color: var(--ink); color: var(--ink); background: transparent; }
+.btn--outline:hover { background: var(--ink); color: #fff; }
+@media (max-width: 860px) {
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-visual { padding-left: 40px; max-width: 480px; }
+  .about-ndop { width: 96px; }
+  .about-photo { aspect-ratio: 4 / 4.6; }
+}
