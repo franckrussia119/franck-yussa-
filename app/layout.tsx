@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: 'Dr. Frank-Valere Yussa',
     title: 'Dr. Frank-Valere Yussa, PhD | Corporate Lawyer & Economist',
     description,
-    images: [{ url: '/images/frank-portrait-lounge.jpg', width: 1067, height: 1600, alt: 'Dr. Frank-Valere Yussa' }],
+    images: [{ url: '/images/hero-defence-wide.jpg', width: 2400, height: 1600, alt: 'Dr. Frank-Valere Yussa at his doctoral defence, RUDN University' }],
   },
   twitter: { card: 'summary_large_image' },
 }
