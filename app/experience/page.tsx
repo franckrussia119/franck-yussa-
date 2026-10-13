@@ -1,39 +1,42 @@
 import type { Metadata } from 'next'
-import { Scale, GraduationCap, Landmark } from 'lucide-react'
+import Link from 'next/link'
 import PageHeader from '@/components/PageHeader'
-import SectionReveal from '@/components/SectionReveal'
 
-export const metadata: Metadata = { title: 'Experience - Frank Valere Yussa' }
+export const metadata: Metadata = {
+  title: 'Experience',
+  description: 'Founding Partner of The Noub’s Law & Advisory, legal consultant to embassies in Russia, former teaching assistant at RUDN University.',
+}
 
 const TIMELINE = [
-  { icon: Scale, year: '2024 – Present · Founding Partner', org: "The Noub's Law & Advisory", items: ['Leading cross-border negotiations across LATAM, Africa, and Europe', 'Legal consultant to multiple embassies in Russia', 'Coordinating complex corporate obligations across multiple jurisdictions'] },
-  { icon: GraduationCap, year: '2022 – 2023 · Teaching Assistant', org: "Peoples' Friendship University of Russia", items: ['Institutional Economy and Finance (BBA students)', 'General Economy with pharmaceutical focus (Medical students)'] },
-  { icon: Landmark, year: '2022 · Market Research Analyst & Area Sales Manager', org: 'Smart Group pl sp. z o.o.', items: ['Market analysis and strategic positioning across Central and Eastern Europe', 'High-profile client acquisition and relationship management', 'International representation at major industry events (SEAL Paris, ANUGA Germany)'] },
+  { when: '2024 – present', role: 'Founding Partner', org: "The Noub's Law & Advisory", points: ['Leads cross-border negotiations across Africa, Europe, Eastern Europe and Latin America', 'Legal consultant to several embassies in Russia on commercial law, bilateral agreements and regulatory matters', 'Coordinates complex corporate obligations across multiple jurisdictions'] },
+  { when: '2022 – 2023', role: 'Teaching Assistant', org: "Peoples' Friendship University of Russia (RUDN)", points: ['Institutional Economy and Finance for BBA students', 'General Economy with a pharmaceutical focus for medical students'] },
+  { when: '2022', role: 'Market Research Analyst & Area Sales Manager', org: 'Smart Group pl sp. z o.o.', points: ['Market analysis and strategic positioning across Central and Eastern Europe', 'High-profile client acquisition and relationship management', 'Represented the company at major industry events, including SIAL Paris and ANUGA Germany'] },
 ]
 
 export default function Experience() {
   return (
     <>
-      <PageHeader title="Experience" subtitle="A decade at the intersection of law, finance, and diplomacy" image="/images/rudn-university.jpg" />
-      <section style={{ padding: '5rem 5%', background: 'white' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          {TIMELINE.map((item, i) => (
-            <SectionReveal key={i} delay={i * 0.08} style={{ display: 'flex', gap: '1.5rem', marginBottom: '3rem' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
-                <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background 0.3s' }}>
-                  <item.icon size={20} color="#04070f" />
+      <PageHeader title="Experience" subtitle="A decade at the intersection of law, finance and diplomacy." image="/images/rudn-university.jpg" imagePosition="center 25%" />
+      <section className="section">
+        <div className="container container--narrow" style={{ maxWidth: 1000 }}>
+          <div className="timeline">
+            {TIMELINE.map((e) => (
+              <div key={e.org} className="timeline-item">
+                <p className="t-label">{e.when}</p>
+                <div>
+                  <h2 className="t-h3">{e.role}</h2>
+                  <p style={{ color: 'var(--slate)', marginTop: '0.2rem' }}>{e.org}</p>
+                  <ul className="bullets" style={{ marginTop: '0.75rem' }}>
+                    {e.points.map((p) => <li key={p}>{p}</li>)}
+                  </ul>
                 </div>
-                {i < TIMELINE.length - 1 && <div style={{ width: 2, flexGrow: 1, background: 'var(--accent-soft)', marginTop: '0.5rem', minHeight: 80, transition: 'background 0.3s' }} />}
               </div>
-              <div className="hover-lift" style={{ background: i % 2 === 1 ? '#eff6ff' : 'white', padding: '1.5rem 2rem', flex: 1, borderRadius: 8, border: '1px solid #e8e8e8' }}>
-                <h3 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: '1.1rem', color: '#0d1b3e', marginBottom: '0.35rem' }}>{item.year}</h3>
-                <p style={{ color: 'var(--accent)', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.75rem', transition: 'color 0.3s' }}>{item.org}</p>
-                <ul style={{ listStyle: 'disc', paddingLeft: '1.25rem', color: '#6b7a8a', fontSize: '0.88rem', lineHeight: 1.9 }}>
-                  {item.items.map((li, j) => <li key={j}>{li}</li>)}
-                </ul>
-              </div>
-            </SectionReveal>
-          ))}
+            ))}
+          </div>
+          <div className="btn-row" style={{ marginTop: '3rem' }}>
+            <Link href="/contact" className="btn btn--ink">Book a consultation</Link>
+            <Link href="/research" className="text-link" style={{ alignSelf: 'center' }}>Education and research</Link>
+          </div>
         </div>
       </section>
     </>

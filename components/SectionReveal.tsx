@@ -1,11 +1,8 @@
-'use client'
-import { motion } from 'framer-motion'
-
+// Formerly animated every section on scroll. Motion is now reserved for the
+// homepage opening sequence, so this is a plain wrapper that keeps the same API.
 export default function SectionReveal({
   children,
   className,
-  delay = 0,
-  y = 24,
   style,
 }: {
   children: React.ReactNode
@@ -15,15 +12,8 @@ export default function SectionReveal({
   style?: React.CSSProperties
 }) {
   return (
-    <motion.div
-      className={className}
-      style={style}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
-    >
+    <div className={className} style={style}>
       {children}
-    </motion.div>
+    </div>
   )
 }

@@ -1,28 +1,27 @@
 import type { Metadata } from 'next'
-import { BookOpen, Clock } from 'lucide-react'
+import Link from 'next/link'
 import PageHeader from '@/components/PageHeader'
-import SectionReveal from '@/components/SectionReveal'
 
-export const metadata: Metadata = { title: 'Books - Frank Valere Yussa' }
+export const metadata: Metadata = {
+  title: 'Books',
+  description: 'Forthcoming publications on international corporate law, cross-border transactions and economic development in emerging markets.',
+}
 
 export default function Books() {
   return (
     <>
-      <PageHeader title="Books" subtitle="Forthcoming publications" image="/images/graduation-seated.jpg" />
-      <section style={{ padding: '6rem 5%', background: 'white' }}>
-        <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
-          <SectionReveal>
-            <div style={{ width: 64, height: 64, borderRadius: '50%', background: 'var(--accent-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', transition: 'background 0.3s' }}>
-              <BookOpen size={28} color="var(--accent)" style={{ transition: 'color 0.3s' }} />
-            </div>
-            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.8rem', color: '#0d1b3e', marginBottom: '1.5rem' }}>Publications Coming Soon</h2>
-            <p style={{ color: '#6b7a8a', lineHeight: 1.8, fontSize: '0.95rem', marginBottom: '2rem' }}>
-              Frank Valere Yussa is currently working on publications covering international corporate law, cross-border transactions, and economic development in emerging markets.
-            </p>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--accent)', fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.05em', textTransform: 'uppercase', transition: 'color 0.3s' }}>
-              <Clock size={16} /> In Progress
-            </div>
-          </SectionReveal>
+      <PageHeader title="Books" subtitle="Forthcoming publications." image="/images/graduation-seated.jpg" imagePosition="center 30%" />
+      <section className="section">
+        <div className="container container--narrow stack-lg">
+          <h2 className="t-h2">In preparation</h2>
+          <p className="t-lead">
+            Dr. Frank-Valere Yussa is writing on international corporate law, cross-border transactions and economic development in emerging markets, drawing on his doctoral research on foreign capital in Cameroon and on payments integrity under the African Continental Free Trade Area.
+          </p>
+          <p className="t-body">To be told when the first title is published, or to discuss a speaking or publishing invitation, get in touch.</p>
+          <div className="btn-row">
+            <Link href="/contact" className="btn btn--ink">Get in touch</Link>
+            <Link href="/research" className="text-link" style={{ alignSelf: 'center' }}>Current research</Link>
+          </div>
         </div>
       </section>
     </>

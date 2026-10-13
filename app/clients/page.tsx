@@ -1,70 +1,63 @@
 import type { Metadata } from 'next'
-import { Building2, Rocket, Landmark, TrendingUp, Building, Cpu, Quote } from 'lucide-react'
+import Link from 'next/link'
 import PageHeader from '@/components/PageHeader'
-import SectionReveal from '@/components/SectionReveal'
+import { REGIONS } from '@/lib/site'
 
-export const metadata: Metadata = { title: 'Clients - Frank Valere Yussa' }
+export const metadata: Metadata = {
+  title: 'Clients',
+  description: 'Corporations, investors, embassies, entrepreneurs and public institutions advised across Africa, Russia, Europe and Latin America.',
+}
 
 const CLIENT_TYPES = [
-  { icon: Building2, text: 'Corporations navigating international expansion' },
-  { icon: Rocket, text: 'Entrepreneurs building scalable ventures' },
-  { icon: Landmark, text: 'Embassies and diplomatic missions' },
-  { icon: TrendingUp, text: 'Investment funds and private equity' },
-  { icon: Building, text: 'Government and public institutions' },
-  { icon: Cpu, text: 'Technology and innovation companies' },
+  { title: 'Corporations', desc: 'Expanding into new markets and needing one advisor who covers the legal and financial sides.' },
+  { title: 'Investment funds & private equity', desc: 'Acquisitions, buyouts and due diligence in emerging markets.' },
+  { title: 'Embassies & diplomatic missions', desc: 'Commercial law, bilateral agreements and trade matters.' },
+  { title: 'Government & public institutions', desc: 'Regulatory frameworks, procurement and cross-border cooperation.' },
+  { title: 'Entrepreneurs', desc: 'Structuring ventures that are built to scale across borders.' },
+  { title: 'Technology companies', desc: 'Market entry, partnerships and international contracts.' },
 ]
 
 export default function Clients() {
   return (
     <>
-      <PageHeader title="Clients" subtitle="Trusted by leaders across industries and continents" image="/images/banner-burgundy.jpg" />
+      <PageHeader title="Clients" subtitle="Advising corporations, embassies, investors and entrepreneurs across Africa, Russia, Europe and Latin America." image="/images/frank-handshake-bench.jpg" imagePosition="center 40%" />
 
-      <section style={{ padding: '5rem 5%', background: 'white' }}>
-        <div style={{ maxWidth: 1000, margin: '0 auto', textAlign: 'center' }}>
-          <SectionReveal>
-            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', color: '#0d1b3e', marginBottom: '1.5rem' }}>Trusted by Leaders Across Industries</h2>
-            <p style={{ color: '#6b7a8a', lineHeight: 1.8, marginBottom: '3rem', fontSize: '0.95rem' }}>
-              Frank Valere Yussa has advised corporations, embassies, and entrepreneurs across LATAM, Africa, and Europe. His clients range from multinational corporations to government institutions seeking specialized legal and financial counsel.
-            </p>
-          </SectionReveal>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
-            {CLIENT_TYPES.map((client, i) => (
-              <SectionReveal key={i} delay={i * 0.06} className="hover-lift" style={{ background: '#f8f8f6', padding: '2rem 1.5rem', borderRadius: 12, border: '1px solid #e8e8e8', textAlign: 'center' }}>
-                <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--accent-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem', transition: 'background 0.3s' }}>
-                  <client.icon size={22} color="var(--accent)" style={{ transition: 'color 0.3s' }} />
-                </div>
-                <p style={{ color: '#0d1b3e', fontFamily: 'Montserrat, sans-serif', fontWeight: 600, fontSize: '0.88rem', lineHeight: 1.5 }}>{client.text}</p>
-              </SectionReveal>
+      <section className="section">
+        <div className="container">
+          <h2 className="t-h2" style={{ maxWidth: '20ch' }}>Who I work with</h2>
+          <div className="grid-3" style={{ marginTop: '2.5rem', rowGap: '2.5rem' }}>
+            {CLIENT_TYPES.map((c) => (
+              <div key={c.title} style={{ borderTop: '2px solid var(--brass)', paddingTop: '1.25rem' }}>
+                <h3 className="t-h3">{c.title}</h3>
+                <p className="t-body" style={{ marginTop: '0.5rem' }}>{c.desc}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Approach */}
-      <section style={{ padding: '5rem 5%', background: '#0d1b3e' }}>
-        <div style={{ maxWidth: 1000, margin: '0 auto', textAlign: 'center' }}>
-          <SectionReveal>
-            <Quote size={32} color="var(--accent)" style={{ margin: '0 auto 1.5rem', display: 'block', transition: 'color 0.3s' }} />
-            <p style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontSize: 'clamp(1.2rem, 2.5vw, 1.6rem)', color: 'white', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-              &ldquo;Every engagement begins with the same principle: legal counsel divorced from economic reality is incomplete. My clients don&apos;t just get a lawyer — they get a partner who understands the financial architecture behind every legal decision.&rdquo;
-            </p>
-            <p style={{ color: 'var(--accent)', fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: '0.85rem', transition: 'color 0.3s' }}>Frank Valere Yussa</p>
-          </SectionReveal>
+      <section className="section bg-indigo">
+        <div className="container container--narrow">
+          <figure>
+            <blockquote className="t-quote" style={{ color: '#fff' }}>
+              &ldquo;Every engagement begins with the same principle: legal counsel divorced from economic reality is incomplete. My clients don&apos;t just get a lawyer. They get a partner who understands the financial architecture behind every legal decision.&rdquo;
+            </blockquote>
+            <figcaption style={{ marginTop: '1.5rem', color: 'var(--brass)', fontWeight: 600 }}>Frank-Valere Yussa, PhD</figcaption>
+          </figure>
         </div>
       </section>
 
-      {/* Regions served */}
-      <section style={{ padding: '5rem 5%', background: '#f8f8f6' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-          <SectionReveal style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 800, fontSize: '1.6rem', color: '#0d1b3e' }}>Where Clients Are Served</h2>
-          </SectionReveal>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
-            {['Latin America', 'Africa', 'Europe', 'Russia & CIS'].map((region, i) => (
-              <SectionReveal key={i} delay={i * 0.06} className="hover-lift" style={{ background: 'white', padding: '1.75rem', borderRadius: 8, textAlign: 'center', border: '1px solid #e8e8e8' }}>
-                <p style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, color: '#0d1b3e', fontSize: '0.95rem' }}>{region}</p>
-              </SectionReveal>
-            ))}
+      <section className="section">
+        <div className="container split">
+          <div>
+            <h2 className="t-h2">Where clients are served</h2>
+            <div className="chips" style={{ marginTop: '1.5rem' }}>
+              {REGIONS.map((r) => <span key={r} className="chip">{r}</span>)}
+            </div>
+          </div>
+          <div className="stack-lg">
+            <p className="t-body">Work is led from Moscow, with counterparties and mandates across five regions. Meetings take place in person or remotely, in the language that suits the client.</p>
+            <p><Link href="/contact" className="btn btn--ink">Book a consultation</Link></p>
           </div>
         </div>
       </section>

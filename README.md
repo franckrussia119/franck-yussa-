@@ -1,62 +1,52 @@
-# Frank Valere Yussa — Portfolio Site
+# Dr. Frank-Valere Yussa — Website
 
-Next.js 14 personal site for Frank Valere Yussa (economist, corporate lawyer,
-investment banker). Redesigned with:
+Next.js 14 site for Dr. Frank-Valere Yussa, PhD (corporate lawyer, economist,
+investment banker).
 
-- A hero image slider on the homepage using real photos (`public/images/`)
-- A per-page accent color that smoothly animates on navigation (see
-  `lib/theme.ts` and `components/AccentProvider.tsx`) — the dark navy shell
-  stays constant, only the accent shifts
-- Scroll-reveal animations, hover states, and an animated stat counter via
-  Framer Motion
-- Icon set switched from emoji/text to `lucide-react`
+## Editing content
+
+- **Email, social links, languages, regions, testimonials:** `lib/site.ts`.
+  Social icons appear automatically once a link is filled in; the testimonials
+  section appears on the homepage once at least one testimonial is added.
+- **Page text:** each page lives in `app/<page>/page.tsx` (homepage: `app/page.tsx`).
+- **Colours and typography:** design tokens at the top of `app/globals.css`.
+- **Photos:** `public/images/`. All images are stored locally; nothing is
+  loaded from the old WordPress site.
+
+Fonts (Libre Caslon and Hanken Grotesk) are installed as npm packages and
+served from the site itself.
+
+## Contact form (email delivery)
+
+Messages are sent with [Resend](https://resend.com) (free tier: 3,000 emails
+a month). In Coolify → the application → Environment Variables, add:
+
+| Variable | Required | Value |
+|---|---|---|
+| `RESEND_API_KEY` | yes | API key from resend.com → API Keys |
+| `CONTACT_TO_EMAIL` | no | Inbox that receives messages (defaults to the email in `lib/site.ts`) |
+| `CONTACT_FROM_EMAIL` | recommended | e.g. `Frank Yussa Website <contact@frankyussa.com>` — requires verifying the domain in Resend |
+
+Without `CONTACT_FROM_EMAIL`, Resend's test sender is used, which can only
+deliver to the email address you signed up to Resend with. Visitors receive
+an automatic confirmation email only when `CONTACT_FROM_EMAIL` is set.
+
+Until `RESEND_API_KEY` is set, the form tells visitors to email directly
+rather than pretending the message was sent.
 
 ## Local development
 
 ```bash
-npm ci   # uses the committed package-lock.json
+export npm_config_legacy_peer_deps=true
+npm ci
 npm run dev
 ```
 
-`legacy-peer-deps` is required (`react-day-picker`/similar minor peer range
-mismatches on React 18 vs newer packages aren't an issue here, but some
-transitive deps still lag). It's baked into the Dockerfile via
-`ENV npm_config_legacy_peer_deps=true`, and the committed `package-lock.json`
-was generated with that same setting — if you ever add dependencies, set
-`export npm_config_legacy_peer_deps=true` in your shell first, then run
-`npm install`, then commit the updated lockfile.
-
-**Important:** `package-lock.json` is committed on purpose. The Dockerfile
-uses `npm ci`, which requires it to be present and in sync with
-`package.json`.
-
-## Editing the per-page accent colors
-
-Open `lib/theme.ts` — each route maps to an `accent` (solid) and
-`accentSoft` (translucent, used for washes/backgrounds) color. Add a new
-page by adding its path to the `THEMES` object.
+`package-lock.json` is committed on purpose: the Dockerfile uses `npm ci`,
+which requires it to match `package.json`.
 
 ## Deploying on Coolify
 
-1. Push this repo to GitHub (as its own top-level repo — don't nest it
-   inside another project's folder).
-2. In Coolify, create a new Application from this repo, build pack:
-   **Dockerfile**.
-3. No environment variables are required — the contact form
-   (`/api/contact`) currently just logs submissions server-side; wire it up
-   to an email service or database if you want real notifications.
-4. Set the exposed port to `3000` (already set via `EXPOSE 3000`).
-
-## Images
-
-Your three uploaded photos live in `public/images/`:
-- `frank-hero-moscow.jpg` — homepage hero slider, Skills/Contact page headers
-- `frank-office-blue-suit.jpg` — homepage "Forged in Complexity" section,
-  Books page header
-- `frank-handshake-bench.jpg` — Clients page header, homepage expertise
-  column
-
-All other images are hotlinked from `frankyussa.com`'s existing WordPress
-media library (already whitelisted in `next.config.js`). If that site is
-ever taken down, those images will break — consider migrating them into
-`public/images/` too at some point.
+1. Application from this GitHub repo, build pack **Dockerfile**.
+2. Exposed port `3000`.
+3. Add the contact-form environment variables above.
