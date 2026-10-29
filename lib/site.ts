@@ -11,7 +11,7 @@ export const SITE = {
 
   // Public contact email shown on the site.
   // (Contact-form messages are sent to CONTACT_TO_EMAIL — see README.)
-  email: 'franckrussia119@gmail.com',
+  email: 'franckvaleur@gmail.com',
 
   // Social profiles. Leave a value empty ('') to hide that icon everywhere.
   social: {
